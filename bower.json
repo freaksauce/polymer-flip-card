@@ -1,0 +1,26 @@
+{
+  "name": "FlipCard",
+  "version": "0.0.1",
+  "authors": [
+    "Jon Bloomer <jon@freaksauce.com>"
+  ],
+  "description": "Card that uses css animation to show front/back content",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "polymer"
+  ],
+  "license": "MIT",
+  "homepage": "http://jonbloomer.com.au",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}
