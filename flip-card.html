@@ -27,7 +27,7 @@ Example:
         -o-perspective: 1000;
         perspective: 1000;
       }
-      .flip-card-container:hover .flipper {
+      .flip-card-container.hover .flipper {
     		-webkit-transform: rotateY(180deg);
     		-moz-transform: rotateY(180deg);
         -o-transform: rotateY(180deg);
@@ -78,7 +78,7 @@ Example:
 
     </style>
 
-    <div class="flip-card-container">
+    <div class="flip-card-container" on-mouseover="onHover">
       <div class="flipper">
         <content select=".flip-card-front"></content>
         <content select=".flip-card-back"></content>
@@ -98,10 +98,14 @@ Example:
     properties: {
 
       /**
-       * `animateOnHover` indicates that the element should animate on hover
+       * `flipOnHover` indicates that the element should animate on hover
        */
       flipOnHover: Boolean,
 
+    },
+
+    onHover: function() {
+      console.log('hover');
     },
 
     // Element Lifecycle
