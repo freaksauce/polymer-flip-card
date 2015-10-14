@@ -19,8 +19,6 @@ Example:
         box-sizing: border-box;
       }
       .flip-card-container {
-        border-radius: 5px;
-        border: 1px solid #ccc;
         -webkit-perspective: 1000;
         -moz-perspective: 1000;
         -o-perspective: 1000;
@@ -60,10 +58,13 @@ Example:
       	position: absolute;
       	top: 0;
       	left: 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
       }
 
       ::content .flip-card-front {
       	z-index: 2;
+        background-color: red;
       }
 
       ::content .flip-card-back {
@@ -72,7 +73,7 @@ Example:
         -o-transform: rotateY(180deg);
       	transform: rotateY(180deg);
 
-      	background: #f8f8f8;
+      	background: blue;
       }
 
     </style>
@@ -112,7 +113,6 @@ Example:
 
     onHover: function() {
       this.hoverState = 'flip-card-container hover';
-      console.log(this.hoverState);
     },
 
     onHoverOff: function() {
