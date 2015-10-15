@@ -19,6 +19,7 @@ Example:
         box-sizing: border-box;
       }
       .flip-card-container {
+        position: relative;
         -webkit-perspective: 1000;
         -moz-perspective: 1000;
         -o-perspective: 1000;
@@ -47,7 +48,7 @@ Example:
       	transition: 0.4s;
       	transform-style: preserve-3d;
 
-      	position: relative;
+        height: inherit;
       }
       ::content .flip-card-front, ::content .flip-card-back {
       	-webkit-backface-visibility: hidden;
@@ -76,6 +77,15 @@ Example:
       	background: blue;
       }
 
+      ::content .flip-button-container {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+        width: 100%;
+      }
+
     </style>
 
     <div class$="{{hoverState}}" on-mouseover="onHover" on-mouseout="onHoverOff">
@@ -83,6 +93,7 @@ Example:
         <content select=".flip-card-front"></content>
         <content select=".flip-card-back"></content>
       </div>
+      <div id="flipContainer" class="flip-button-container"><content select=".flip-card-button"></content></div>
     </div>
 
   </template>
@@ -122,6 +133,20 @@ Example:
         this.hoverState = 'flip-card-container';
       }
     },
+
+    ready: function() {
+      if (document.querySelector('.flip-button-container')) {
+        var self = this;
+        this.$.flipContainer.addEventListener('click', function (e) {
+          // console.log(e); // true
+          if (self.hoverState == 'flip-card-container') {
+            self.hoverState = 'flip-card-container hover';
+          }else{
+            self.hoverState = 'flip-card-container';
+          }
+        });
+      }
+    }
 
 
   });
