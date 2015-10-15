@@ -100,7 +100,7 @@ Example:
       /**
        * `flipOnHover` indicates that the element should animate on hover
        */
-      flipOnHover: Boolean,
+      flipOnHover: String,
       /**
       * 'hoverState' is set to 'hover' to flip
       **/
@@ -112,11 +112,15 @@ Example:
     },
 
     onHover: function() {
-      this.hoverState = 'flip-card-container hover';
+      if (this.flipOnHover == "true") {
+        this.hoverState = 'flip-card-container hover';
+      }
     },
 
     onHoverOff: function() {
-      this.hoverState = 'flip-card-container';
+      if (this.flipOnHover == "true") {
+        this.hoverState = 'flip-card-container';
+      }
     },
 
 
